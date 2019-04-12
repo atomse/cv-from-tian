@@ -1,0 +1,30 @@
+language: generic
+
+branches:
+    only:
+        - master
+
+notifications:
+    email: false
+
+dist: xenial
+
+addons:
+    apt:
+        packages:
+            - texlive-full
+
+env:
+    global:
+        - secure: "N0Rt5VNq5rX2uwlltUws0Sj03elzpIeYP4hYQkimmBfUnU5Cjw1seWEXYFZghvr4YZhoTYrmDv1DZsity3go7UCFy5/ZLkYl418ev7sOdQT2yA1hjAoNgFyRyXoJZLmUVaEDUYv/QQUBnMtE44F58SdGBPKbkY/epU7AvmvUgSw="
+
+script:
+    - make
+
+# deploy:
+#     # Push the PDF to a branch
+#     - provider: script
+#       script: ci/deploy-pdf.sh
+#       skip_cleanup: true
+#       on:
+#           branch: master
